@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Find your forever home</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --ink:#1e2a2f; --muted:#62707a; --blue:#0f766e; --green:#f5a524;
+  --input:#eef5f4; --sub:#a8e0d8; --line:#f5a524;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#14171c;--ink:#f1f3f6;--muted:#a3abb7;--input:#e9edf7}
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);border-top:2px solid var(--line)}
+
+header{display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:120px;background:var(--bg)}
+.logo{font-weight:700;font-size:1.35rem;color:var(--ink);text-decoration:none}
+nav{display:flex;align-items:center;gap:2.5rem}
+nav a{color:var(--muted);text-decoration:none;font-size:1.05rem;font-weight:500;display:flex;align-items:center;gap:.4rem}
+nav a:hover{color:var(--blue)}
+nav a .chev{width:.45rem;height:.45rem;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg)}
+.btn-buy{background:var(--blue);color:#fff;font-weight:600;font-size:.95rem;padding:1rem 1.5rem;border-radius:.35rem;text-decoration:none;display:inline-flex;align-items:center;gap:.7rem;margin-left:1rem}
+.btn-buy:hover{background:#0b5c56}
+
+.hero{background:var(--blue);color:#fff;text-align:center;padding:12rem 1.5rem 11rem;border-bottom-left-radius:50% 60px;border-bottom-right-radius:50% 60px;position:relative}
+.hero h1{font-size:clamp(2.2rem,4.4vw,3.4rem);font-weight:500;margin:0 0 1rem;letter-spacing:-.01em}
+.hero p{max-width:50rem;margin:0 auto 2.6rem;color:var(--sub);font-size:1.3rem;line-height:1.6}
+.search{display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap}
+.search input{width:min(700px,100%);padding:1rem 1.4rem;border:0;border-radius:.4rem;background:var(--input);font:inherit;font-size:1rem;color:#212832}
+.search input::placeholder{color:#8a91a0}
+.search input:focus-visible,.btn-buy:focus-visible,.search button:focus-visible,nav a:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}
+.search button{background:var(--green);color:#1f2937;border:0;border-radius:.4rem;padding:1rem 1.5rem;font:inherit;font-weight:600;cursor:pointer}
+.search button:hover{background:#e09410}
+
+.settings{position:fixed;right:0;top:115px;width:59px;height:60px;background:#fff;border-radius:.4rem 0 0 .4rem;box-shadow:0 .15rem 1.75rem rgba(33,40,50,.15);display:grid;place-items:center;border:0;cursor:pointer}
+.settings svg{width:20px;height:20px;fill:#000}
+
+.up{position:absolute;left:50%;transform:translateX(-50%);bottom:-100px;width:73px;height:40px;background:#fff;border:1px solid #cfd4dc;border-bottom:0;border-radius:.4rem .4rem 0 0;display:grid;place-items:center;cursor:pointer}
+.up span{width:14px;height:14px;border-left:2px solid #212832;border-top:2px solid #212832;transform:translateY(3px) rotate(45deg)}
+.after{height:140px}
+
+@media (max-width:900px){
+  header{height:auto;padding:1rem 5%;flex-wrap:wrap;gap:.75rem}
+  nav{gap:1rem;flex-wrap:wrap}
+  .hero{padding:6rem 1.25rem 6rem}
+  .hero p{font-size:1.1rem}
+  .btn-buy{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">Homely</a>
+  <nav aria-label="Main">
+    <a href="#">Home</a>
+    <a href="#">Landings <i class="chev"></i></a>
+    <a href="#">Pages <i class="chev"></i></a>
+    <a href="#">Documentation <i class="chev"></i></a>
+    <a class="btn-buy" href="#">Buy Now
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+    </a>
+  </nav>
+</header>
+
+<button class="settings" aria-label="Settings">
+  <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M487 316l-43-25a190 190 0 000-70l43-25a12 12 0 005-14 253 253 0 00-55-96 12 12 0 00-15-2l-43 25a186 186 0 00-60-35V30a12 12 0 00-9-12 256 256 0 00-111 0 12 12 0 00-9 12v50a186 186 0 00-60 35l-43-25a12 12 0 00-15 2 253 253 0 00-55 96 12 12 0 005 14l43 25a190 190 0 000 70l-43 25a12 12 0 00-5 14 253 253 0 0055 96 12 12 0 0015 2l43-25a186 186 0 0060 35v50a12 12 0 009 12 256 256 0 00111 0 12 12 0 009-12v-50a186 186 0 0060-35l43 25a12 12 0 0015-2 253 253 0 0055-96 12 12 0 00-5-14zM256 336a80 80 0 1180-80 80 80 0 01-80 80z"/></svg>
+</button>
+
+<section class="hero">
+  <h1>Find your forever home</h1>
+  <p>It's time to find the home of your dreams, and you search begins here. We make it easy to find the property that fits your needs and budget.</p>
+  <form class="search" onsubmit="return false">
+    <input type="search" placeholder="Search properties near you..." aria-label="Search properties">
+    <button type="submit">Search</button>
+  </form>
+  <button class="up" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span></span></button>
+</section>
+<div class="after"></div>
+</body>
+</html>
